@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Pizza Order Form</title>
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+<body>
+    <script src="index.js"></script>
+    <form name = "orderForm" onsubmit="return false">
+        <fieldset id = "pizzaSize">
+            <legend>Size</legend>
+
+            <label for ="small">Small - $7</label>
+            <input type="radio" id="small" value = "small" name="size" onclick="sizeSelect(this)"><br>
+        
+            <label for ="medium">Medium -$10</label>
+            <input type="radio" id="medium" value = "medium" name="size" onclick="sizeSelect(this)"><br>
+        
+            <label for ="large">Large -$14</label>
+            <input type="radio" id="large" value = "large" name="size" onclick="sizeSelect(this)"><br>
+        </fieldset>
+        <fieldset id = "numberOfToppings">
+            <label for = "numToppings">Add toppings?</label>
+            <select id = "numToppings" name = "numToppings" oninput="toppingsSelect()">
+                <option value = "0" selected="selected">No toppings</option>
+                <option value = "1">One topping (+$2)</option>
+                <option value = "2">Two toppings (+$3)</option>
+            </select>
+        </fieldset>
+        <input type ="submit" value="Submit" onclick ="printOrderCompletion()"><br>
+    </form>
+    <div id = "completedOrder"></div>
+</body>
